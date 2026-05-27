@@ -1,0 +1,29 @@
+name: Fetch Jobs Daily
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch 10 jobs from Adzuna SA
+        run: |
+          curl -s "https://api.adzuna.com/v1/api/jobs/za/search/1?app_id=${{ secrets.ADZUNA_APP_ID }}&app_key=${{ secrets.ADZUNA_API_KEY }}&results_per_page=10&sort_by=date" > jobs.json
+
+      - name: Commit jobs.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add jobs.json
+          git diff --staged --quiet || git commit -m "daily: update jobs.json from Adzuna API"
+          git push

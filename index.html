@@ -3,260 +3,329 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jobs & Career SA — South Africa's Trusted Job Board</title>
-  <meta name="description" content="South Africa's trusted job board. Curated career opportunities across finance, tech, healthcare, education, and more. Updated daily — never miss a role.">
-  <meta name="keywords" content="South Africa jobs, career opportunities, job board SA, find jobs in South Africa, finance jobs, tech jobs, healthcare careers, jobsani">
-  <meta name="author" content="Jobs & Career SA">
+  <title>Jobsani — South Africa's Live Job Board</title>
+  <meta name="description" content="Jobsani fetches 10 fresh South African jobs daily via Adzuna. Browse live opportunities in finance, tech, healthcare, engineering & more.">
+  <meta name="keywords" content="South Africa jobs, live job board SA, Adzuna jobs, find jobs SA, finance jobs, tech jobs, jobsani">
+  <meta name="author" content="Jobsani">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://jobsani.co.za/">
-  <meta property="og:title" content="Jobs & Career SA — Your Next Opportunity Starts Here">
-  <meta property="og:description" content="South Africa's trusted job board. Curated career opportunities across every industry — from finance and tech to healthcare and education. Updated daily.">
+  <link rel="canonical" href="https://halalisanin.github.io/jobsani/">
+  <meta property="og:title" content="Jobsani — 10 Fresh SA Jobs Every Day">
+  <meta property="og:description" content="Jobsani brings you 10 hand-picked South African job listings daily. Powered by Adzuna.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80">
-  <meta property="og:url" content="https://jobsani.co.za/">
+  <meta property="og:url" content="https://halalisanin.github.io/jobsani/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Jobs & Career SA">
+  <meta property="og:site_name" content="Jobsani">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Jobs & Career SA — South African Job Board">
-  <meta name="twitter:description" content="Find your next career opportunity in South Africa. Jobs in finance, tech, healthcare, education — updated daily.">
+  <meta name="twitter:title" content="Jobsani — 10 Fresh SA Jobs Every Day">
+  <meta name="twitter:description" content="Fresh South African jobs daily. Powered by Adzuna.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Jobs & Career SA",
-    "url": "https://jobsani.co.za/",
-    "description": "South Africa's trusted job board connecting talent with opportunity",
-    "foundingDate": "2025",
-    "areaServed": "South Africa"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Jobs & Career SA",
-    "description": "South Africa's trusted job board. Curated career opportunities across every industry.",
-    "url": "https://jobsani.co.za/",
-    "lastReviewed": "2026-05-26"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Jobs & Career SA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jobs & Career SA is South Africa's trusted job board. We curate the latest career opportunities across every industry — from finance and tech to healthcare and education — updated daily so you never miss a role."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What industries do you cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We cover finance, technology, healthcare, education, engineering, retail, logistics, hospitality, marketing, and government sectors across all nine South African provinces."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Jobs & Career SA free to use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, job seekers can browse and apply for positions at no cost. Employers can post vacancies through our paid listing plans."
-        }
-      }
-    ]
-  }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', -apple-system, sans-serif; color: #2C3E50; background: #F8F9FA; }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80') center/cover no-repeat;
-    }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: #2C3E50; background: #F0F2F5; }
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; justify-content: center; gap: 2rem;
-      padding: 1.5rem 2rem;
-      z-index: 10;
+      padding: 1.2rem 2rem; z-index: 100;
+      background: rgba(44,62,80,0.95); backdrop-filter: blur(8px);
     }
     nav a {
       color: rgba(255,255,255,0.8); text-decoration: none;
-      font-size: 0.85rem; font-weight: 600;
+      font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.05em; text-transform: uppercase;
       transition: color 0.2s;
     }
     nav a:hover { color: #D4AF37; }
-    .hero-content { max-width: 720px; }
+    .hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #2C3E50 0%, #1a252f 100%);
+    }
     .badge {
       display: inline-block;
-      background: #D4AF37;
-      color: #2C3E50;
-      padding: 0.35rem 1rem;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      background: #D4AF37; color: #2C3E50;
+      padding: 0.35rem 1rem; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+      color: #fff; line-height: 1.15; margin-bottom: 0.6rem;
+    }
+    .hero .tagline {
+      font-size: clamp(0.95rem, 2vw, 1.2rem);
+      color: #D4AF37; font-weight: 500; margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.75);
+      max-width: 600px; margin: 0 auto; line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 2rem; }
+    .controls {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-bottom: 1.5rem; align-items: center;
+    }
+    .controls input {
+      flex: 1; min-width: 200px; padding: 0.7rem 1rem;
+      border: 1px solid #D0D5DD; border-radius: 8px;
+      font-family: inherit; font-size: 0.9rem;
+      background: #fff; outline: none;
+    }
+    .controls input:focus { border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,175,55,0.15); }
+    .controls select {
+      padding: 0.7rem 1rem; border: 1px solid #D0D5DD;
+      border-radius: 8px; font-family: inherit; font-size: 0.9rem;
+      background: #fff; outline: none; cursor: pointer;
+    }
+    .stats {
+      display: flex; justify-content: space-between; align-items: center;
       margin-bottom: 1.5rem;
     }
-    h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      font-weight: 800;
-      color: #FFFFFF;
-      line-height: 1.1;
+    .stats .count {
+      font-size: 0.85rem; color: #888; font-weight: 500;
+    }
+    .stats .count strong { color: #2C3E50; }
+    .date-badge {
+      font-size: 0.8rem; color: #D4AF37; font-weight: 600;
+    }
+    .loading {
+      text-align: center; padding: 3rem; color: #888;
+    }
+    .loading .spinner {
+      display: inline-block; width: 36px; height: 36px;
+      border: 3px solid #E0E0E0; border-top-color: #D4AF37;
+      border-radius: 50%; animation: spin 0.8s linear infinite;
       margin-bottom: 1rem;
     }
-    .tagline {
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      color: #D4AF37;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty {
+      text-align: center; padding: 3rem; color: #888;
     }
-    .desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.7;
-      margin-bottom: 2rem;
+    .job-card {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      margin-bottom: 1rem; border: 1px solid #E8E8E8;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2.5rem;
-      background: #D4AF37;
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border-radius: 8px;
-      transition: opacity 0.2s, transform 0.2s;
+    .job-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
     }
-    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
+    .job-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem;
     }
-    .section h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: #2C3E50;
-      margin-bottom: 1rem;
-      text-align: center;
+    .job-title {
+      font-size: 1.1rem; font-weight: 700; color: #2C3E50;
+      text-decoration: none; line-height: 1.3;
     }
-    .section h3 {
-      font-size: 1.2rem;
-      color: #2C3E50;
-      margin-bottom: 0.6rem;
+    .job-title:hover { color: #D4AF37; }
+    .job-company {
+      font-size: 0.9rem; font-weight: 600; color: #555;
+      margin-bottom: 0.5rem;
     }
-    .section p, .section li {
-      color: #555;
-      line-height: 1.7;
+    .job-meta {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
+      font-size: 0.85rem; color: #777; margin-bottom: 0.75rem;
     }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+    .job-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .salary {
+      color: #2C3E50; font-weight: 700;
     }
-    .feature-card {
-      background: #FFFFFF;
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid #E0E0E0;
+    .cat-tag {
+      display: inline-block; padding: 0.2rem 0.6rem;
+      background: #F0F2F5; border-radius: 6px;
+      font-size: 0.75rem; font-weight: 600; color: #555;
     }
-    .feature-card h3 { color: #D4AF37; }
-    .faq-list {
-      max-width: 800px;
-      margin: 2.5rem auto 0;
+    .job-desc {
+      font-size: 0.9rem; color: #666; line-height: 1.6;
+      margin-bottom: 0.75rem;
     }
-    .faq-item {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid #E0E0E0;
+    .job-desc .more { color: #D4AF37; cursor: pointer; font-weight: 600; }
+    .job-actions { display: flex; gap: 0.75rem; }
+    .apply-btn {
+      display: inline-block; padding: 0.5rem 1.2rem;
+      background: #D4AF37; color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 0.8rem; border-radius: 8px;
+      transition: opacity 0.2s;
     }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { cursor: default; }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #E0E0E0;
-      color: #999;
-      font-size: 0.85rem;
+    .apply-btn:hover { opacity: 0.85; }
+    .new-badge {
+      display: inline-block; padding: 0.2rem 0.6rem;
+      background: #E8F5E9; color: #2E7D32; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
     }
+    .footer {
+      text-align: center; padding: 2rem;
+      color: #999; font-size: 0.8rem;
+      border-top: 1px solid #E0E0E0; margin-top: 2rem;
+    }
+    .footer a { color: #D4AF37; text-decoration: none; }
     @media (max-width: 600px) {
       nav { gap: 1rem; padding: 1rem; }
-      .hero { padding: 1.5rem; }
-      .section { padding: 3rem 1.5rem; }
+      .hero { padding: 6rem 1.5rem 3rem; }
+      .container { padding: 1rem; }
+      .job-card { padding: 1rem; }
+      .job-header { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#">Jobs</a><a href="#">Companies</a><a href="#">Resources</a>
+    <a href="#">Home</a><a href="#jobs">Today's Jobs</a><a href="#about">About</a>
   </nav>
+
   <section class="hero">
-    <div class="hero-content">
-      <div class="badge">Jobs & Career</div>
-      <p class="tagline">Your Next Opportunity Starts Here</p>
-      <h1>Jobs & Career</h1>
-      <p class="desc">South Africa's trusted job board. We curate the latest career opportunities across every industry — from finance and tech to healthcare and education. Updated daily so you never miss a role.</p>
-      <a href="#" class="btn">Browse Jobs</a>
-    </div>
+    <div class="badge">Daily Refresh</div>
+    <h1>Jobsani</h1>
+    <p class="tagline">10 Fresh South African Jobs — Every Day</p>
+    <p>Powered by Adzuna. Updated each morning with the latest opportunities across finance, tech, healthcare, engineering, and more.</p>
   </section>
 
-  <section class="section" id="industries">
-    <h2>Industries We Cover</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Finance & Accounting</h3>
-        <p>Roles in banking, investment, audit, tax, and financial planning at top South African firms and multinationals.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Technology & IT</h3>
-        <p>Software development, data science, cybersecurity, cloud engineering, and IT management positions across SA.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Healthcare & Medical</h3>
-        <p>Opportunities for doctors, nurses, allied health professionals, and healthcare administrators nationwide.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Engineering & Manufacturing</h3>
-        <p>Civil, mechanical, electrical, and industrial engineering roles in both private and public sectors.</p>
+  <section class="container" id="jobs">
+    <div class="stats">
+      <div class="count">Showing <strong id="shown-count">0</strong> of <strong id="total-count">0</strong> jobs</div>
+      <div class="date-badge" id="update-date">Loading...</div>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search by title, company, or keyword..." oninput="renderJobs()">
+      <select id="cat-filter" onchange="renderJobs()">
+        <option value="">All Categories</option>
+      </select>
+    </div>
+
+    <div id="job-list">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Fetching today's jobs...</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>What is Jobs & Career SA?</h3>
-        <p>Jobs & Career SA is South Africa's trusted job board. We curate the latest career opportunities across every industry — from finance and tech to healthcare and education — updated daily so you never miss a role.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is it free for job seekers?</h3>
-        <p>Yes, browsing and applying for positions on Jobs & Career SA is completely free. Create a profile, upload your CV, and start applying today.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How often are jobs updated?</h3>
-        <p>New positions are added daily. We recommend checking the site every morning and setting up job alerts so you're notified when relevant roles are posted.</p>
-      </div>
+  <section class="container" id="about">
+    <div style="text-align:center;max-width:650px;margin:0 auto;">
+      <h2 style="font-size:1.5rem;margin-bottom:0.75rem;color:#2C3E50;">About Jobsani</h2>
+      <p style="color:#666;line-height:1.7;font-size:0.9rem;">
+        Jobsani brings you 10 curated South African job listings every single day. We pull from
+        <a href="https://www.adzuna.co.za/" style="color:#D4AF37;text-decoration:none;font-weight:600;">Adzuna</a>'s extensive database
+        of 90,000+ active SA positions, selecting the freshest listings across every industry —
+        from finance and tech to healthcare, engineering, and beyond.
+        New jobs every morning. No sign-up required. Just browse and apply.
+      </p>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025-2026 Jobs &amp; Career SA. Last updated: May 26, 2026.</p>
-  </footer>
+  <div class="footer">
+    <p>&copy; 2025-2026 Jobsani. Powered by <a href="https://www.adzuna.co.za/">Adzuna</a>.</p>
+  </div>
+
+  <script>
+    let allJobs = [];
+
+    async function loadJobs() {
+      try {
+        const res = await fetch('jobs.json?_=' + Date.now());
+        if (!res.ok) throw new Error('Not found');
+        const data = await res.json();
+        allJobs = (data.results || data).slice(0, 10);
+        populateCategories();
+        renderJobs();
+      } catch {
+        document.getElementById('job-list').innerHTML =
+          '<div class="empty"><p style="font-size:2rem;margin-bottom:0.5rem;">&#128196;</p><p>No jobs loaded yet.</p><p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa;">Jobs update every morning via GitHub Actions. Check back soon or <a href="https://github.com/Halalisanin/jobsani/actions/workflows/fetch-jobs.yml" style="color:#D4AF37;">run the workflow manually</a>.</p></div>';
+      }
+    }
+
+    function populateCategories() {
+      const cats = new Set();
+      allJobs.forEach(j => { if (j.category && j.category.label) cats.add(j.category.label); });
+      const sel = document.getElementById('cat-filter');
+      cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; sel.appendChild(o); });
+    }
+
+    function daysAgo(dateStr) {
+      const d = new Date(dateStr);
+      const now = new Date();
+      const diff = Math.floor((now - d) / 86400000);
+      if (diff === 0) return 'today';
+      if (diff === 1) return 'yesterday';
+      return diff + ' days ago';
+    }
+
+    function truncate(desc, max = 250) {
+      if (!desc) return '';
+      const cleaned = desc.replace(/[▪➢•●→]+/g, '').replace(/\s+/g, ' ').trim();
+      if (cleaned.length <= max) return cleaned;
+      return cleaned.slice(0, max).replace(/\s+\S*$/, '') + '...';
+    }
+
+    function formatSalary(min, max) {
+      if (!min && !max) return '';
+      if (min && max && min === max) return 'R ' + min.toLocaleString();
+      if (min && max) return 'R ' + min.toLocaleString() + ' - R ' + max.toLocaleString();
+      if (min) return 'From R ' + min.toLocaleString();
+      if (max) return 'Up to R ' + max.toLocaleString();
+      return '';
+    }
+
+    function renderJobs() {
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      const cat = document.getElementById('cat-filter').value;
+
+      let filtered = allJobs.filter(j => {
+        const title = (j.title || '').toLowerCase();
+        const company = (j.company && j.company.display_name || '').toLowerCase();
+        const desc = (j.description || '').toLowerCase();
+        const location = (j.location && j.location.display_name || '').toLowerCase();
+        const matchSearch = !q || title.includes(q) || company.includes(q) || desc.includes(q) || location.includes(q);
+        const matchCat = !cat || (j.category && j.category.label === cat);
+        return matchSearch && matchCat;
+      });
+
+      document.getElementById('shown-count').textContent = filtered.length;
+      document.getElementById('total-count').textContent = allJobs.length;
+
+      const latest = allJobs.length > 0 ? allJobs[0].created : null;
+      document.getElementById('update-date').textContent = latest ? 'Updated ' + daysAgo(latest) : '';
+
+      if (filtered.length === 0) {
+        document.getElementById('job-list').innerHTML =
+          '<div class="empty"><p style="font-size:2rem;margin-bottom:0.5rem;">&#128270;</p><p>No jobs match your search.</p></div>';
+        return;
+      }
+
+      document.getElementById('job-list').innerHTML = filtered.map(j => {
+        const isNew = daysAgo(j.created) === 'today';
+        const salary = formatSalary(j.salary_min, j.salary_max);
+        const loc = j.location ? j.location.display_name : 'South Africa';
+        const catLabel = j.category ? j.category.label : '';
+        const catTag = j.category ? j.category.tag : '';
+
+        return '<div class="job-card">' +
+          '<div class="job-header">' +
+            '<div>' +
+              (isNew ? '<span class="new-badge" style="margin-bottom:0.4rem;display:inline-block;">New Today</span>' : '') +
+              '<div><a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="job-title">' + j.title + '</a></div>' +
+            '</div>' +
+          '</div>' +
+          (j.company && j.company.display_name ? '<div class="job-company">' + j.company.display_name + '</div>' : '') +
+          '<div class="job-meta">' +
+            '<span>&#128205; ' + loc + '</span>' +
+            (salary ? '<span class="salary">' + salary + '</span>' : '') +
+            '<span>&#128197; ' + daysAgo(j.created) + '</span>' +
+            (catLabel ? '<span class="cat-tag">' + catLabel + '</span>' : '') +
+          '</div>' +
+          '<div class="job-desc">' + truncate(j.description) + '</div>' +
+          '<div class="job-actions">' +
+            '<a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="apply-btn">Apply on Adzuna</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    loadJobs();
+  </script>
 </body>
 </html>
