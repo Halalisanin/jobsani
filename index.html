@@ -28,19 +28,21 @@
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; justify-content: center; gap: 2rem;
       padding: 1.2rem 2rem; z-index: 100;
-      background: rgba(44,62,80,0.95); backdrop-filter: blur(8px);
+      background: rgba(44,62,80,0.85); backdrop-filter: blur(8px);
     }
     nav a {
-      color: rgba(255,255,255,0.8); text-decoration: none;
+      color: rgba(255,255,255,0.85); text-decoration: none;
       font-size: 0.8rem; font-weight: 600;
       letter-spacing: 0.05em; text-transform: uppercase;
       transition: color 0.2s;
     }
     nav a:hover { color: #D4AF37; }
     .hero {
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-      background: linear-gradient(135deg, #2C3E50 0%, #1a252f 100%);
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; padding: 2rem;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80') center/cover no-repeat;
     }
     .badge {
       display: inline-block;
@@ -51,18 +53,36 @@
       margin-bottom: 1rem;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
-      color: #fff; line-height: 1.15; margin-bottom: 0.6rem;
+      font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800;
+      color: #fff; line-height: 1.1; margin-bottom: 0.6rem;
     }
     .hero .tagline {
-      font-size: clamp(0.95rem, 2vw, 1.2rem);
-      color: #D4AF37; font-weight: 500; margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: #D4AF37; font-weight: 600; margin-bottom: 1rem;
     }
-    .hero p {
-      font-size: 0.95rem; color: rgba(255,255,255,0.75);
-      max-width: 600px; margin: 0 auto; line-height: 1.6;
+    .hero .sub {
+      font-size: 0.95rem; color: rgba(255,255,255,0.8);
+      max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;
     }
-    .container { max-width: 960px; margin: 0 auto; padding: 2rem; }
+    .btn-gold {
+      display: inline-block; padding: 0.85rem 2.2rem;
+      background: #D4AF37; color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 0.9rem; border-radius: 8px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover { opacity: 0.9; transform: translateY(-2px); }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800; color: #2C3E50;
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: #888; font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .container { max-width: 1024px; margin: 0 auto; padding: 4rem 2rem; }
     .controls {
       display: flex; flex-wrap: wrap; gap: 0.75rem;
       margin-bottom: 1.5rem; align-items: center;
@@ -83,13 +103,9 @@
       display: flex; justify-content: space-between; align-items: center;
       margin-bottom: 1.5rem;
     }
-    .stats .count {
-      font-size: 0.85rem; color: #888; font-weight: 500;
-    }
+    .stats .count { font-size: 0.85rem; color: #888; font-weight: 500; }
     .stats .count strong { color: #2C3E50; }
-    .date-badge {
-      font-size: 0.8rem; color: #D4AF37; font-weight: 600;
-    }
+    .date-badge { font-size: 0.8rem; color: #D4AF37; font-weight: 600; }
     .loading {
       text-align: center; padding: 3rem; color: #888;
     }
@@ -103,91 +119,117 @@
     .empty {
       text-align: center; padding: 3rem; color: #888;
     }
+    .job-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
     .job-card {
-      background: #fff; border-radius: 12px; padding: 1.5rem;
-      margin-bottom: 1rem; border: 1px solid #E8E8E8;
+      background: #fff; border-radius: 12px; padding: 1.25rem;
+      border: 1px solid #E8E8E8;
       transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
     }
     .job-card:hover {
       box-shadow: 0 4px 20px rgba(0,0,0,0.07);
       transform: translateY(-2px);
     }
-    .job-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem;
-    }
     .job-title {
-      font-size: 1.1rem; font-weight: 700; color: #2C3E50;
+      font-size: 1rem; font-weight: 700; color: #2C3E50;
       text-decoration: none; line-height: 1.3;
     }
     .job-title:hover { color: #D4AF37; }
     .job-company {
-      font-size: 0.9rem; font-weight: 600; color: #555;
-      margin-bottom: 0.5rem;
+      font-size: 0.85rem; font-weight: 600; color: #555;
+      margin-bottom: 0.4rem;
     }
     .job-meta {
-      display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
-      font-size: 0.85rem; color: #777; margin-bottom: 0.75rem;
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;
+      font-size: 0.8rem; color: #777; margin-bottom: 0.5rem;
     }
-    .job-meta span { display: flex; align-items: center; gap: 0.35rem; }
-    .salary {
-      color: #2C3E50; font-weight: 700;
-    }
+    .job-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .salary { color: #2C3E50; font-weight: 700; }
     .cat-tag {
-      display: inline-block; padding: 0.2rem 0.6rem;
+      display: inline-block; padding: 0.15rem 0.5rem;
       background: #F0F2F5; border-radius: 6px;
-      font-size: 0.75rem; font-weight: 600; color: #555;
+      font-size: 0.7rem; font-weight: 600; color: #555;
     }
     .job-desc {
-      font-size: 0.9rem; color: #666; line-height: 1.6;
-      margin-bottom: 0.75rem;
+      font-size: 0.85rem; color: #666; line-height: 1.5;
+      margin-bottom: 0.75rem; flex: 1;
     }
-    .job-desc .more { color: #D4AF37; cursor: pointer; font-weight: 600; }
-    .job-actions { display: flex; gap: 0.75rem; }
     .apply-btn {
-      display: inline-block; padding: 0.5rem 1.2rem;
+      display: inline-block; padding: 0.45rem 1rem;
       background: #D4AF37; color: #fff; text-decoration: none;
-      font-weight: 700; font-size: 0.8rem; border-radius: 8px;
-      transition: opacity 0.2s;
+      font-weight: 700; font-size: 0.75rem; border-radius: 8px;
+      transition: opacity 0.2s; align-self: flex-start;
     }
     .apply-btn:hover { opacity: 0.85; }
     .new-badge {
-      display: inline-block; padding: 0.2rem 0.6rem;
+      display: inline-block; padding: 0.15rem 0.5rem;
       background: #E8F5E9; color: #2E7D32; border-radius: 100px;
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+      margin-bottom: 0.35rem;
     }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .blog-card {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      border: 1px solid #E8E8E8;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .blog-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+    .blog-img {
+      height: 160px; background-size: cover; background-position: center;
+    }
+    .blog-body { padding: 1.25rem; }
+    .blog-body h3 { font-size: 1rem; color: #2C3E50; margin-bottom: 0.4rem; }
+    .blog-body p { font-size: 0.85rem; color: #666; line-height: 1.5; margin-bottom: 0.75rem; }
+    .blog-body .read-more {
+      color: #D4AF37; font-weight: 600; font-size: 0.8rem;
+      text-decoration: none;
+    }
+    .blog-body .read-more:hover { text-decoration: underline; }
     .footer {
       text-align: center; padding: 2rem;
       color: #999; font-size: 0.8rem;
-      border-top: 1px solid #E0E0E0; margin-top: 2rem;
+      border-top: 1px solid #E0E0E0;
     }
     .footer a { color: #D4AF37; text-decoration: none; }
+    .section-alt { background: #fff; }
+    @media (max-width: 768px) {
+      .job-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 600px) {
       nav { gap: 1rem; padding: 1rem; }
-      .hero { padding: 6rem 1.5rem 3rem; }
-      .container { padding: 1rem; }
-      .job-card { padding: 1rem; }
-      .job-header { flex-direction: column; }
+      .hero { padding: 1.5rem; }
+      .container { padding: 2.5rem 1rem; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#">Home</a><a href="#jobs">Today's Jobs</a><a href="#about">About</a>
+    <a href="#">Home</a><a href="#jobs">Jobs</a><a href="#blog">Blog</a>
   </nav>
 
   <section class="hero">
     <div class="badge">Daily Refresh</div>
     <h1>Jobsani</h1>
     <p class="tagline">10 Fresh South African Jobs — Every Day</p>
-    <p>Powered by Adzuna. Updated each morning with the latest opportunities across finance, tech, healthcare, engineering, and more.</p>
+    <p class="sub">Powered by Adzuna. Updated each morning with the latest opportunities across finance, tech, healthcare, engineering, and more.</p>
+    <a href="#jobs" class="btn-gold">Browse Today's Jobs</a>
   </section>
 
   <section class="container" id="jobs">
-    <div class="stats">
-      <div class="count">Showing <strong id="shown-count">0</strong> of <strong id="total-count">0</strong> jobs</div>
-      <div class="date-badge" id="update-date">Loading...</div>
-    </div>
+    <h2 class="section-title">Today's Jobs</h2>
+    <p class="section-sub">Fresh listings pulled every morning from South Africa's job market</p>
 
     <div class="controls">
       <input type="text" id="search" placeholder="Search by title, company, or keyword..." oninput="renderJobs()">
@@ -196,24 +238,52 @@
       </select>
     </div>
 
-    <div id="job-list">
-      <div class="loading">
+    <div class="stats">
+      <div class="count">Showing <strong id="shown-count">0</strong> of <strong id="total-count">0</strong> jobs</div>
+      <div class="date-badge" id="update-date">Loading...</div>
+    </div>
+
+    <div id="job-list" class="job-grid">
+      <div class="loading" style="grid-column:1/-1;">
         <div class="spinner"></div>
         <p>Fetching today's jobs...</p>
       </div>
     </div>
   </section>
 
-  <section class="container" id="about">
-    <div style="text-align:center;max-width:650px;margin:0 auto;">
-      <h2 style="font-size:1.5rem;margin-bottom:0.75rem;color:#2C3E50;">About Jobsani</h2>
-      <p style="color:#666;line-height:1.7;font-size:0.9rem;">
-        Jobsani brings you 10 curated South African job listings every single day. We pull from
-        <a href="https://www.adzuna.co.za/" style="color:#D4AF37;text-decoration:none;font-weight:600;">Adzuna</a>'s extensive database
-        of 90,000+ active SA positions, selecting the freshest listings across every industry —
-        from finance and tech to healthcare, engineering, and beyond.
-        New jobs every morning. No sign-up required. Just browse and apply.
-      </p>
+  <section class="section-alt" id="blog">
+    <div class="container">
+      <h2 class="section-title">Career Insights</h2>
+      <p class="section-sub">Tips and guides to help you land your next role in South Africa</p>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=600&q=80')"></div>
+          <div class="blog-body">
+            <h3>How to Write a CV That Stands Out in SA</h3>
+            <p>South African recruiters spend seconds scanning your CV. Learn what to include, what to cut, and how to tailor your CV for local employers.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920256?w=600&q=80')"></div>
+          <div class="blog-body">
+            <h3>Ace Your Virtual Interview</h3>
+            <p>Remote interviews are the new normal. From setup and lighting to handling tough questions — prepare like a pro.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80')"></div>
+          <div class="blog-body">
+            <h3>Top Industries Hiring in SA Right Now</h3>
+            <p>Finance, tech, healthcare, and engineering are leading hiring in South Africa. Discover which sectors have the most opportunities and how to break in.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -234,7 +304,7 @@
         renderJobs();
       } catch {
         document.getElementById('job-list').innerHTML =
-          '<div class="empty"><p style="font-size:2rem;margin-bottom:0.5rem;">&#128196;</p><p>No jobs loaded yet.</p><p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa;">Jobs update every morning via GitHub Actions. Check back soon or <a href="https://github.com/Halalisanin/jobsani/actions/workflows/fetch-jobs.yml" style="color:#D4AF37;">run the workflow manually</a>.</p></div>';
+          '<div class="empty" style="grid-column:1/-1;"><p style="font-size:2rem;margin-bottom:0.5rem;">📄</p><p>No jobs loaded yet.</p><p style="font-size:0.85rem;margin-top:0.5rem;color:#aaa;">Jobs update every morning. Check back soon or <a href="https://github.com/Halalisanin/jobsani/actions/workflows/fetch-jobs.yml" style="color:#D4AF37;">run the workflow</a>.</p></div>';
       }
     }
 
@@ -254,7 +324,7 @@
       return diff + ' days ago';
     }
 
-    function truncate(desc, max = 250) {
+    function truncate(desc, max = 200) {
       if (!desc) return '';
       const cleaned = desc.replace(/[▪➢•●→]+/g, '').replace(/\s+/g, ' ').trim();
       if (cleaned.length <= max) return cleaned;
@@ -292,7 +362,7 @@
 
       if (filtered.length === 0) {
         document.getElementById('job-list').innerHTML =
-          '<div class="empty"><p style="font-size:2rem;margin-bottom:0.5rem;">&#128270;</p><p>No jobs match your search.</p></div>';
+          '<div class="empty" style="grid-column:1/-1;"><p style="font-size:2rem;margin-bottom:0.5rem;">🔍</p><p>No jobs match your search.</p></div>';
         return;
       }
 
@@ -301,26 +371,19 @@
         const salary = formatSalary(j.salary_min, j.salary_max);
         const loc = j.location ? j.location.display_name : 'South Africa';
         const catLabel = j.category ? j.category.label : '';
-        const catTag = j.category ? j.category.tag : '';
 
         return '<div class="job-card">' +
-          '<div class="job-header">' +
-            '<div>' +
-              (isNew ? '<span class="new-badge" style="margin-bottom:0.4rem;display:inline-block;">New Today</span>' : '') +
-              '<div><a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="job-title">' + j.title + '</a></div>' +
-            '</div>' +
-          '</div>' +
+          (isNew ? '<span class="new-badge">New Today</span>' : '') +
+          '<div><a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="job-title">' + j.title + '</a></div>' +
           (j.company && j.company.display_name ? '<div class="job-company">' + j.company.display_name + '</div>' : '') +
           '<div class="job-meta">' +
-            '<span>&#128205; ' + loc + '</span>' +
+            '<span>📍 ' + loc + '</span>' +
             (salary ? '<span class="salary">' + salary + '</span>' : '') +
-            '<span>&#128197; ' + daysAgo(j.created) + '</span>' +
+            '<span>📅 ' + daysAgo(j.created) + '</span>' +
             (catLabel ? '<span class="cat-tag">' + catLabel + '</span>' : '') +
           '</div>' +
           '<div class="job-desc">' + truncate(j.description) + '</div>' +
-          '<div class="job-actions">' +
-            '<a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="apply-btn">Apply on Adzuna</a>' +
-          '</div>' +
+          '<a href="' + j.redirect_url + '" target="_blank" rel="noopener" class="apply-btn">Apply on Adzuna</a>' +
         '</div>';
       }).join('');
     }
